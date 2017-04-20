@@ -1,0 +1,320 @@
+<!doctype html>
+<head>
+  <script>
+  var m = "X";
+  var h = m.fontcolor("black");                            /*for me*/
+  var p = h.fontsize(7);
+  var k = p;
+  var co = "O";
+  var mpu = co.fontcolor("black");                            /*for me*/
+  var ter = mpu.fontsize(7);
+  var re = ter;                                                       /*for computer*/
+
+
+  function computer(chance)    /*Computer moves computation part*/
+  {  var list=["m1","m2","m3","m4","m5","m6","m7","m8","m9","m1","m4","m7","m2","m5","m8","m3","m6","m9","m1","m5","m9"]
+     var i=0
+     var value=0;
+     var one,two,three,one1,two1,three1
+     var max=0,max1=0;
+     var t,h,ree,a,b,c
+     while(i<=18)
+      {
+            t=list[i]
+            h=list[i+1]
+            ree=list[i+2]
+            a=document.getElementById(t)
+            b=document.getElementById(h)
+            c=document.getElementById(ree)
+           if(((a.innerHTML===k)&&(b.innerHTML!=k)&&(c.innerHTML!=k)&&(b.innerHTML!=ter)&&(c.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML===k)&&(c.innerHTML!=k)&&(a.innerHTML!=ter)&&(c.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML!=k)&&(c.innerHTML===k)&&(a.innerHTML!=ter)&&(b.innerHTML!=ter)))
+            {
+               value=1
+               if(value>max)
+                { max=value
+                  one=t
+                  two=h
+                  three=ree
+                }
+
+             }
+
+           else if(((a.innerHTML===k)&&(b.innerHTML===k)&&(c.innerHTML!=k)&&(c.innerHTML!=ter))||((a.innerHTML===k)&&(b.innerHTML!=k)&&(c.innerHTML===k)&&(b.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML===k)&&(c.innerHTML===k)&&(a.innerHTML!=ter)))
+             {
+               value=2;
+               if(value>max)
+                { max=value
+                  one=t;
+                  two=h;
+                  three=ree;
+                }
+              }
+        i=i+3
+
+    }
+      t="m3"
+      h="m5"
+      ree="m7"
+      a=document.getElementById(t)
+      b=document.getElementById(h)
+      c=document.getElementById(ree)
+      if(((a.innerHTML===k)&&(b.innerHTML!=k)&&(c.innerHTML!=k)&&(b.innerHTML!=ter)&&(c.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML===k)&&(c.innerHTML!=k)&&(a.innerHTML!=ter)&&(c.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML!=k)&&(c.innerHTML===k)&&(a.innerHTML!=ter)&&(b.innerHTML!=ter)))
+       {
+          value=1
+          if(value>max)
+           { max=value
+             one=t
+             two=h
+             three=ree
+           }
+
+        }
+
+      else if(((a.innerHTML===k)&&(b.innerHTML===k)&&(c.innerHTML!=k)&&(c.innerHTML!=ter))||((a.innerHTML===k)&&(b.innerHTML!=k)&&(c.innerHTML===k)&&(b.innerHTML!=ter))||((a.innerHTML!=k)&&(b.innerHTML===k)&&(c.innerHTML===k)&&(a.innerHTML!=ter)))
+        {
+          value=2;
+          if(value>max)
+           { max=value
+             one=t;
+             two=h;
+             three=ree;
+           }
+         }
+/*cm*/ i=0
+while(i<=18)
+ {
+       t=list[i]
+       h=list[i+1]
+       ree=list[i+2]
+       a=document.getElementById(t)
+       b=document.getElementById(h)
+       c=document.getElementById(ree)
+      if(((a.innerHTML===ter)&&(b.innerHTML!=ter)&&(c.innerHTML!=ter)&&(b.innerHTML!=k)&&(c.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML===ter)&&(c.innerHTML!=ter)&&(a.innerHTML!=k)&&(c.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML!=ter)&&(c.innerHTML===ter)&&(a.innerHTML!=k)&&(b.innerHTML!=k)))
+       {
+          value=1
+          if(value>max1)
+           { max1=value
+             one1=t
+             two1=h
+             three1=ree
+           }
+
+        }
+
+      else if(((a.innerHTML===ter)&&(b.innerHTML===ter)&&(c.innerHTML!=ter)&&(c.innerHTML!=k))||((a.innerHTML===ter)&&(b.innerHTML!=ter)&&(c.innerHTML===ter)&&(b.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML===ter)&&(c.innerHTML===ter)&&(a.innerHTML!=k)))
+        {
+          value=2;
+          if(value>max1)
+           { max1=value
+             one1=t;
+             two1=h;
+             three1=ree;
+           }
+         }
+   i=i+3
+
+}
+ t="m3"
+ h="m5"
+ ree="m7"
+ a=document.getElementById(t)
+ b=document.getElementById(h)
+ c=document.getElementById(ree)
+ if(((a.innerHTML===ter)&&(b.innerHTML!=ter)&&(c.innerHTML!=ter)&&(b.innerHTML!=k)&&(c.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML===ter)&&(c.innerHTML!=ter)&&(a.innerHTML!=k)&&(c.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML!=ter)&&(c.innerHTML===ter)&&(a.innerHTML!=k)&&(b.innerHTML!=k)))
+  {
+     value=1
+     if(value>max1)
+      { max1=value
+        one1=t
+        two1=h
+        three1=ree
+      }
+
+   }
+
+ else if(((a.innerHTML===ter)&&(b.innerHTML===ter)&&(c.innerHTML!=ter)&&(c.innerHTML!=k))||((a.innerHTML===ter)&&(b.innerHTML!=ter)&&(c.innerHTML===ter)&&(b.innerHTML!=k))||((a.innerHTML!=ter)&&(b.innerHTML===ter)&&(c.innerHTML===ter)&&(a.innerHTML!=k)))
+   {
+     value=2;
+     if(value>max1)
+      { max1=value
+        one1=t;
+        two1=h;
+        three1=ree;
+      }
+    }
+
+    if(max>max1)
+    {
+       if((document.getElementById(one).innerHTML!=ter)&&(document.getElementById(one).innerHTML!=k))
+          {
+            document.getElementById(one).innerHTML=ter
+          }
+       else if((document.getElementById(two).innerHTML!=ter)&&(document.getElementById(two).innerHTML!=k))
+        {
+            document.getElementById(two).innerHTML=ter
+        }
+       else if((document.getElementById(three).innerHTML!=k)&&(document.getElementById(three).innerHTML!=ter))
+          {
+            document.getElementById(three).innerHTML=ter
+           }
+       }
+     else if(max1>=max)
+     {
+       if((document.getElementById(one1).innerHTML!=ter)&&(document.getElementById(one1).innerHTML!=k))
+          {
+            document.getElementById(one1).innerHTML=ter
+          }
+       else if((document.getElementById(two1).innerHTML!=ter)&&(document.getElementById(two1).innerHTML!=k))
+        {
+            document.getElementById(two1).innerHTML=ter
+        }
+       else if((document.getElementById(three1).innerHTML!=k)&&(document.getElementById(three1).innerHTML!=ter))
+          {
+            document.getElementById(three1).innerHTML=ter
+           }
+
+     }
+
+
+  }
+
+  function change(zok)
+   {   var valid=0
+       if(document.getElementById(zok).innerHTML!=ter && document.getElementById(zok).innerHTML!=k)
+         {  valid=1
+            document.getElementById(zok).innerHTML=p;
+          }
+
+          if((document.getElementById("m1").innerHTML === k) && (document.getElementById("m2").innerHTML === k) && (document.getElementById("m3").innerHTML === k))
+           {document.getElementById("des").innerHTML="You Win";
+           }
+
+          else if ((document.getElementById("m1").innerHTML === k) && (document.getElementById("m4").innerHTML === k) && (document.getElementById("m7").innerHTML === k))
+           {
+             document.getElementById("des").innerHTML="You Win";
+           }
+          else if((document.getElementById("m1").innerHTML === k) && (document.getElementById("m5").innerHTML === k) && (document.getElementById("m9").innerHTML === k))
+           {
+             document.getElementById("des").innerHTML="You Win";
+          }
+
+          else if((document.getElementById("m4").innerHTML === k) && (document.getElementById("m5").innerHTML === k) && (document.getElementById("m6").innerHTML === k))
+          {
+             document.getElementById("des").innerHTML="You Win";
+          }
+   /*
+    else
+  */
+          else if((document.getElementById("m7").innerHTML === k) && (document.getElementById("m8").innerHTML === k) && (document.getElementById("m9").innerHTML === k))
+           {
+              document.getElementById("des").innerHTML="You Win";
+           }
+    /*
+     else
+    */
+          else if((document.getElementById("m3").innerHTML === k) && (document.getElementById("m6").innerHTML === k) && (document.getElementById("m9").innerHTML === k))
+           {
+              document.getElementById("des").innerHTML="You Win";
+           }
+  /*
+   else
+  */
+           else if((document.getElementById("m2").innerHTML === k) && (document.getElementById("m5").innerHTML === k) && (document.getElementById("m8").innerHTML === k))
+            {
+                document.getElementById("des").innerHTML="You Win";
+            }
+  /*
+   else
+  */
+           else if((document.getElementById("m3").innerHTML === k) && (document.getElementById("m5").innerHTML === k) && (document.getElementById("m7").innerHTML === k))
+            {
+               document.getElementById("des").innerHTML="You Win";
+            }
+
+      /*Computer loss or win*/
+
+            if((document.getElementById("m1").innerHTML === ter) && (document.getElementById("m2").innerHTML === ter) && (document.getElementById("m3").innerHTML === ter))
+              {
+                document.getElementById("des").innerHTML="You lose";
+              }
+            else if ((document.getElementById("m1").innerHTML === ter) && (document.getElementById("m4").innerHTML ===ter) && (document.getElementById("m7").innerHTML === ter))
+              {
+                 document.getElementById("des").innerHTML="You lose";
+              }
+            else if((document.getElementById("m1").innerHTML ===ter) && (document.getElementById("m5").innerHTML ===ter) && (document.getElementById("m9").innerHTML ===ter))
+             {
+                document.getElementById("des").innerHTML="You lose";
+             }
+            else if((document.getElementById("m4").innerHTML ===ter) && (document.getElementById("m5").innerHTML ===ter) && (document.getElementById("m6").innerHTML ===ter))
+              {
+                 document.getElementById("des").innerHTML="You lose";
+              }
+              /*
+              esle*/
+            else if((document.getElementById("m7").innerHTML === ter) && (document.getElementById("m8").innerHTML ===ter) && (document.getElementById("m9").innerHTML ===ter))
+             {
+                document.getElementById("des").innerHTML="You lose";
+             }
+            /*else*/
+           else if((document.getElementById("m3").innerHTML ===ter) && (document.getElementById("m6").innerHTML ===ter) && (document.getElementById("m9").innerHTML ===ter))
+            {
+                document.getElementById("des").innerHTML="You lose";
+            }
+        /*
+         else
+        */
+           else if((document.getElementById("m2").innerHTML ===ter) && (document.getElementById("m5").innerHTML ===ter) && (document.getElementById("m8").innerHTML ===ter))
+             {
+               document.getElementById("des").innerHTML="You lose";
+             }
+        /*
+         else
+        */
+           else if((document.getElementById("m3").innerHTML ===ter) && (document.getElementById("m5").innerHTML ===ter) && (document.getElementById("m7").innerHTML ===ter))
+                {
+                   document.getElementById("des").innerHTML="You lose";
+                }
+
+         if(((document.getElementById("des").innerHTML!="You Win")||(document.getElementById("des").innerHTML!="You lose") )&& valid!=0)
+            {
+                  computer(zok);
+            }
+
+  }
+</script>
+ <h2 align="center"><font color="red">Hi this is  Tik Takto game(by HJ)</font></h2>
+ <p align="middle">
+     <font color="blue">Result is<font>
+</p>
+<p id="des" align="middle">X</p>
+</head>
+<body>
+
+ <div  align="center" style="border:1px solid black;height:100px;width:100px;padding:2px">
+     <p id="m1" style="text-align:center" onclick="change('m1')"><font color="white" size="6">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-106px 900px 30px 105px">
+     <p id="m2" style="text-align:center" onclick="change('m2')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-136px 900px 30px 210px">
+     <p id="m3" style="text-align:center" onclick="change('m3')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-30px 900px 30px 0px">
+     <p id="m4" style="text-align:center"onclick="change('m4')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-137px 900px 300px 105px">
+     <p id="m5" style="text-align:center" onclick="change('m5')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-405px 500px 500px 210px">
+     <p id="m6" style="text-align:center" onclick="change('m6')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-501px 500px 500px 0px">
+     <p id="m7" style="text-align:center" onclick="change('m7')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-606px 500px 500px 105px">
+     <p id="m8" style="text-align:center" onclick="change('m8')"><font color="white">x<font><p>
+ </div>
+ <div style="border:1px solid black;height:100px;width:100px;padding:2px;margin:-606px 400px 900px 210px">
+     <p id="m9" style="text-align:center" onclick="change('m9')"><font color="white">x<font><p>
+ </div>
+</body>
+</html>
